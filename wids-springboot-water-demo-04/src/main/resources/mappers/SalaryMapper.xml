@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wids.mapper.SalaryMapper">
+<!--
+    什么使用MyBatis-Plus自带的CRUD，什么使用使用Mapper.xml配置文件
+    个人理解：如果单张表的CRUD操作我们使用MyBatis-Plus自带的CRUD，如果多张表联合查询需要自己写SQL
+
+    SQL语句写在Mapper.xml配置文件好一些还是写在Mapper接口注解里面好些？
+    个人习惯：把所有SQL语句写在Mapper.xml配置文件里面。
+    好处：1 Java代码和数据库代码分离. 2 如果有大量重复的SQL语句可以在配置文件中提取出来
+
+    什么是软件中的业务？ 软件功能的流程和结构
+    1. 通常一个软件的业务都会建立在外键中。 找到哪些表有外键，有外键的表就是你软件中的业务表，然后找到外键关联的主键
+    去工作： 1 找到软件的建模(表结构模型) 2 找到哪些表有外键  3 找到这些外键关联的逐渐
+    2. 软件中的业务在SQL语句的select查询中。 工作中业务在多表联合查询的业务中。所以多表联合查询必知必会。
+       面试：10家公司里面有7家都需要面试SQL语句
+    写SQL语句注意的地方？
+    1 根据需求确定要查询哪些表？
+    2 确定每张表要查询那些列？
+    3 开始写SQL语句
+      注意不要把面向对象的思维方式用来写SQL，因为SQL不是一个面向对象的语言。
+      如何写
+      1 列出SQL语句的关键字（7个），你要考虑我的业务需要用到那些
+      select
+      from
+      where
+      group by
+      having
+      order by
+      limit
+      2 要理解每个关键字的作用
+      select 列过滤
+      from 确定要查询那些表
+      where 行过滤
+      group by 为那些列分组（MySQL数据库可以是列名称也可以是列别名）
+      having 对聚合函数进行过滤
+      order by asc|desc 对SQL结果集进行排序
+      limit       返回限制的行数 通常用来做分页
+      3 理解这些关键字执行的顺序
+      s  f  w  g  h  o  l
+
+      f  w  g  h  s  o  l
+-->
+<!--    提取多个select语句公共的部分-->
+    <sql id="selectSalary">
+        select w.worker_name , w.worker_salary , w.worker_money,
+        IFNULL(sum(h.send_water_count),0) as send_water_count,
+        IFNULL(sum(h.send_water_count * w.worker_money) + w.worker_salary , w.worker_salary)  as final_salary
+        from tb_worker w left join tb_history h on w.wid = h.worker_id
+    </sql>
+<!--
+resultType 表示SQL语句查询的结果集，此时查询的结果数据存储在Salary实体上
+-->
+    <select id="calcSalary" resultType="Salary">
+        <include refid="selectSalary"></include>
+        group by  w.wid
+        order by final_salary desc
+    </select>
+
+    <!-- 查询指定区间的送水工工资信息-->
+    <select id="calcSalaryByCondition" resultType="Salary" parameterType="string">
+        <include refid="selectSalary"></include>
+        where h.send_water_time BETWEEN  #{beginDate} AND #{endDate}
+        group by w.wid
+        order by final_salary desc
+    </select>
+<!--    没有在指定时间段为客户送过水的送水工信息-->
+    <select id="calcSalaryNonByCondition" resultType="Worker" parameterType="string">
+        SELECT w.worker_name , w.worker_salary , w.worker_money
+        FROM tb_worker w left join tb_history h on w.wid = h.worker_id
+        WHERE h.worker_id is NULL
+        union
+        SELECT w.worker_name , w.worker_salary , w.worker_money
+        FROM tb_worker w left join tb_history h on w.wid = h.worker_id
+        WHERE not h.send_water_time BETWEEN '2022-02-01' AND '2022-02-28'
+    </select>
+
+</mapper>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> XXX送水公司后台管理系统</title>
+
+    <!--Bootstrap固定框架-->
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}">
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.css}">
+    <!--图标库-->
+    <link rel='stylesheet' th:href='@{/css/material-design-iconic-font.min.css}'>
+    <!--核心样式-->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+
+<div id="viewport">
+
+    <!-- Sidebar
+    th:replace="waterMainMenu::sidebar"表示将div标签下面重复的代码替换为waterMainMenu页面的sidebar片段
+    -->
+    <div id="sidebar" th:replace="waterMainMenu::sidebar">
+
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+<!--
+th:replace="waterMainMenu::navbar"
+表示将nav标签下面所有的重复代码替换为waterMainMenu页面的navbar片段
+-->
+        <nav class="navbar navbar-default" th:replace="waterMainMenu::navbar">
+
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <a class="btn btn-primary" th:href="@{/cust/preSaveCust}">添加客户</a>
+                    </div>
+                    <div class="col-md-8">
+                        <form class="form-inline" th:action="@{/cust/searchCust}">
+<!--                            th:text="${wordKey}" 显示后端传入给前端的关键字
+                                th表示thymeleaf模板    value是模板的指令，使用文本的方式显示搜索关键字
+-->
+                            <input type="text" class="form-control" th:value="${wordKey}" th:name="custName" placeholder="请输入客户名称"/>
+                            <input type="submit" class="btn btn-primary" name="search" value="搜索"/>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-12">
+<!--                    class属性值就是bootstrap为我们提供的样式-->
+                    <table class="table table-hover table-striped">
+<!--                        表头信息-->
+                        <thead>
+                        <tr>
+                            <td>客户编号</td>
+                            <td>客户名称</td>
+                            <td>客户地址</td>
+                            <td>联系方式</td>
+                            <td>水票数量</td>
+                            <td>操作</td>
+
+                        </tr>
+                        </thead>
+<!--                        表内容
+                        需要遍历后端的custList集合，将集合的数据以文本的形式显示在页面上
+-->
+                        <tbody>
+                        <!-- 渲染后客户列表
+                            th:each 是thymeleaf模板的each标签，专门用来便利集合中的元素
+                             ${custList}表示后端传入到前端列表的集合，
+                             cust表示集合中的一个Customer元素，此时逐个遍历集合中的每个元素
+                             th: 表示thymeleaf对象
+                             text表示thymeleaf对象的指令，此时将客户信息以文本的方式显示到页面上
+                        -->
+                            <tr th:each="cust : ${custList}">
+                                <td th:text="${cust.cid}"></td>
+                                <td th:text="${cust.custName}"></td>
+                                <td th:text="${cust.custAddress}"></td>
+                                <td th:text="${cust.custMobile}"></td>
+                                <td th:text="${cust.custTicket}"></td>
+                                <td>
+<!--                                    定义删除按钮，该按钮使用Bootstrap样式
+                                        动态路径使用thymeleaf模板提供的th:href指令来编写  @{}里面存放着动态路径
+-->
+
+                                    <a class="glyphicon glyphicon-remove" th:href="@{'/cust/delCustById/'+${cust.cid}}"></a>
+<!--                                    定义一个修改按钮-->
+                                    <a class="glyphicon glyphicon-edit" th:href="@{'/cust/preUpdateCust/'+${cust.cid}}"></a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

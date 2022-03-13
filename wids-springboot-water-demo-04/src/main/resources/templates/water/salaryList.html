@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> XXX送水公司后台管理系统</title>
+
+    <!--Bootstrap固定框架-->
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}">
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.css}">
+    <!--图标库-->
+    <link rel='stylesheet' th:href='@{/css/material-design-iconic-font.min.css}'>
+    <!--核心样式-->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+
+<div id="viewport">
+
+    <!-- Sidebar
+    th:replace="waterMainMenu::sidebar"表示将div标签下面重复的代码替换为waterMainMenu页面的sidebar片段
+    -->
+    <div id="sidebar" th:replace="waterMainMenu::sidebar">
+
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+        <!--
+        th:replace="waterMainMenu::navbar"
+        表示将nav标签下面所有的重复代码替换为waterMainMenu页面的navbar片段
+        -->
+        <nav class="navbar navbar-default" th:replace="waterMainMenu::navbar">
+
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-8">
+                        <form class="form-inline" th:action="@{/salary/searchSalaryList}">
+<!--
+        required表示input输入框是必填项
+-->
+                            <input type="date"
+                                   th:value="${searchBeginDate}"
+                                   class="form-control"
+                                   th:name="beginDate"
+                                   placeholder="请输入开始时间" required/>
+                            <input type="date"
+                                   th:value="${searchEndDate}"
+                                   class="form-control"
+                                   th:name="endDate"
+                                   placeholder="请输入结束时间"/>
+                            <input type="submit" class="btn btn-primary" name="search" value="搜索"/>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <!--                    class属性值就是bootstrap为我们提供的样式-->
+                    <table class="table table-hover table-striped">
+                        <!--                        表头信息-->
+                        <thead>
+                        <tr>
+                            <td>送水工名称</td>
+                            <td>底薪</td>
+                            <td>每桶提成</td>
+                            <td>送水数量</td>
+                            <td>送水状态</td>
+                            <td>实发工资</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr th:each="sa : ${saList}">
+                            <td th:text="${sa.workerName}"></td>
+                            <td th:text="${sa.workerSalary}"></td>
+                            <td th:text="${sa.workerMoney}"></td>
+                            <td th:text="${sa.sendWaterCount}"></td>
+                            <td th:text="${sa.sendWaterCount > 0 ? '已送水':'未送水'}"></td>
+                            <td th:text="${sa.finalSalary}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

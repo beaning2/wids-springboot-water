@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> XXX送水公司后台管理系统</title>
+
+    <!--Bootstrap固定框架-->
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}">
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.css}">
+    <!--图标库-->
+    <link rel='stylesheet' th:href='@{/css/material-design-iconic-font.min.css}'>
+    <!--核心样式-->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+<!--    引入jQuery库-->
+    <script th:src="@{/webjars/jquery/3.3.1/jquery.js}"></script>
+    <script>
+        $(function(){
+            /**
+             * 减工资步骤：
+             * 1 使用元素属性选择获取-
+             * 2 为-绑定(注册)单机时间
+             * 3 获取送水工的id和送水工的工资
+             * 4 对原有的送水工工资-100
+             * 5 将调整之后的工资，重新响应到页面上
+             * 6 调用使用jQuery的ajax，向后端发起异步请求
+             * */
+            $("span[id=sub]").click(function(){
+                // 获取送水工的id
+                var workerId = $(this).attr("class");
+                // $(this).prev()选择减号(-)的前一个元素，获取该元素的文本信息
+                var salary = $(this).prev().text();
+                // alert("workerId ="+workerId +" salary = "+salary);
+                // 调整之后的新工资
+                var newSalary = parseInt(salary) - 100;
+                // 将调整之后的工资从新设置到页面的span id=salary标签上
+                $(this).prev().text(newSalary);
+                // 向后端发起异步ajax请求
+                $.ajax({
+                    // 向后端发起的异步请求路径
+                    url: 'http://localhost:8093/worker/adjustSalary',
+                    // 封装前端传递给后端的参数
+                    data:{
+                        wid:workerId,
+                        workerSalary:newSalary,
+                    },
+                    // 请求方式：post
+                    type: 'POST',
+                    // 异步请求发送成功的回调函数
+                    success: function(data,status) {
+                        if (data == 'ok') {
+                            alert('调整工资成功');
+                        } else {
+                            alert('调整工资失败');
+                        }
+                    }
+                })
+            })
+
+
+            // 加工资 使用元素属性选择器,选中所有的+。然后为他们绑定单击时间
+            $("span[id=add]").click(function(){
+                /*
+                调整工资步骤：
+                1 获取送水工ID
+                2 获取送水工基本工资
+                3 将基本工资 +100
+                4 将调整之后的新工资，重新设置到页面上
+                5 使用ajax向后端发起请求，将新工资异步更新到后台数据库
+                * */
+                // $(this) 表示当前的jQuery对象(+)
+                var workerId = $(this).attr("class");
+                // $(this).next() 表示获取当前对象的下一个节点 .text()表示获取span里面的文本属性值
+                var salary = $(this).next().text();
+                // 将工资+100  newSalary表示调整之后的工资
+                var newSalary = parseInt(salary) + 100;
+                // 将调整之后的工资重新设置到 span id="salary"
+                $(this).next().text(newSalary);
+                // 使用ajax技术向后端发起响应
+                /**
+                 url 里面定义了发送给后端的请求路径
+                 data 定义了传入后端的参数
+                 type 定义请求方式
+                 success 异步请求成功之后执行的回调函数
+                 * */
+                $.ajax({
+                    url: 'http://localhost:8093/worker/adjustSalary',
+                    data:{
+                        wid:workerId,
+                        workerSalary:newSalary
+                    },
+                    type: 'POST',
+                    success: function(data,status) {
+                        if(data == 'ok') {
+                            alert('调整工资成功');
+                        } else {
+                            alert('调整工资失败');
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+    <style>
+        img{
+            width:60px;
+            height: 60px;
+        }
+        #add,#sub{
+            font-size: 20px;
+            font-weight: bolder;
+            color:red;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="viewport">
+
+    <!-- Sidebar
+    th:replace="waterMainMenu::sidebar"表示将div标签下面重复的代码替换为waterMainMenu页面的sidebar片段
+    -->
+    <div id="sidebar" th:replace="waterMainMenu::sidebar">
+
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+        <!--
+        th:replace="waterMainMenu::navbar"
+        表示将nav标签下面所有的重复代码替换为waterMainMenu页面的navbar片段
+        -->
+        <nav class="navbar navbar-default" th:replace="waterMainMenu::navbar">
+
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <a class="btn btn-primary" th:href="@{/worker/preSaveWorker}">添加送水工</a>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <!--                    class属性值就是bootstrap为我们提供的样式-->
+                    <table class="table table-hover table-striped">
+                        <!--                        表头信息-->
+                        <thead>
+                        <tr>
+                            <td>送水工编号</td>
+                            <td>送水工名称</td>
+                            <td>送水工底薪</td>
+                            <td>送水工提成</td>
+                            <td>送水工照片</td>
+                            <td>操作</td>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        <tr th:each="worker : ${workerList}">
+                            <td th:text="${worker.wid}"></td>
+                            <td th:text="${worker.workerName}"></td>
+<!--                            <td th:text="${worker.workerSalary}"></td>-->
+                            <td>
+<!--                                加工资按钮-->
+                                <span id="add" th:class="${worker.wid}">+</span>
+                                <span id="salary" th:text="${worker.workerSalary}"></span>
+<!--                                减工资按钮-->
+                                <span id="sub" th:class="${worker.wid}">-</span>
+                            </td>
+                            <td th:text="${worker.workerMoney}"></td>
+                            <td>
+<!--
+                            添加送水工没有上传照片，显示默认的送水工照片
+                            th:if="${#strings.isEmpty(worker.workerImage)}" 条件成立：没有上传照片，显示默认的照片
+-->
+                                <img th:if="${#strings.isEmpty(worker.workerImage)}"  src="../../images/user.png"/>
+
+<!--                                客户上传了照片，显示已经上传的照片
+                            th:if="${not #strings.isEmpty(worker.workerImage)}" 条件成立：表示照片不为空(传了送水工照片)，在服务器路径下面显示照片
+-->
+                                <img th:if="${not #strings.isEmpty(worker.workerImage)}" th:src="'http://localhost:8093/'+${worker.workerImage}" />
+                            </td>
+                            <td>
+                                <a class="glyphicon glyphicon-edit" th:href="@{'/worker/preUpdateWorker/'+${worker.wid}}"></a>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

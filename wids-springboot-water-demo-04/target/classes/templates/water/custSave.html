@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> XXX送水公司后台管理系统</title>
+
+    <!--Bootstrap固定框架-->
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}">
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.css}">
+    <!--图标库-->
+    <link rel='stylesheet' th:href='@{/css/material-design-iconic-font.min.css}'>
+    <!--核心样式-->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+
+<div id="viewport">
+
+    <!-- Sidebar -->
+    <div id="sidebar" th:replace="waterMainMenu::sidebar">
+
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+        <nav class="navbar navbar-default" th:replace="waterMainMenu::navbar">
+
+        </nav>
+<!--        bootstrap框架的外层容器-->
+        <div class="container-fluid">
+<!--            容器使用行的方式从左到右进行流式布局-->
+            <div class="row">
+<!--                栅格系统把屏幕的宽度分隔为12等分-->
+                <div class="col-md-12">
+<!--                    水平排列的表单-->
+                    <form class="form-horizontal" method="post" th:action="@{/cust/saveCust}" >
+                        <div class="form-group">
+<!--                           col-sm-2 表示客户名称标签宽度占据了12个格子的两个 -->
+                            <label  class="col-sm-2 control-label">客户名称</label>
+<!--                            col-sm-5 表示宽度占据了12个格子的其中5个-->
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="custName"  placeholder="客户名称">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">客户地址</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="custAddress"  placeholder="客户地址">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">联系方式</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="custMobile"  placeholder="联系方式">
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label  class="col-sm-2 control-label">水票数量</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="custTicket"  placeholder="水票数量">
+                            </div>
+                        </div>
+                        <div class="form-group">
+<!--                            col-sm-offset-2 col-sm-5 表示提交和取消按钮占据了12个格子的5个，但是会向右偏移两个-->
+                            <div class="col-sm-offset-2 col-sm-5">
+                                <input type="submit" class="btn btn-primary" name="submit"  value="提交">
+                                &nbsp;&nbsp;
+                                <input type="reset" class="btn btn-warning" name="reset"  value="取消">
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

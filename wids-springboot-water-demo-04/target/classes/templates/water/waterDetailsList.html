@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> XXX送水公司后台管理系统</title>
+
+    <!--Bootstrap固定框架-->
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}">
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.css}">
+    <!--图标库-->
+    <link rel='stylesheet' th:href='@{/css/material-design-iconic-font.min.css}'>
+    <!--核心样式-->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+
+<div id="viewport">
+
+    <!-- Sidebar
+    th:replace="waterMainMenu::sidebar"表示将div标签下面重复的代码替换为waterMainMenu页面的sidebar片段
+    -->
+    <div id="sidebar" th:replace="waterMainMenu::sidebar">
+
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+        <!--
+        th:replace="waterMainMenu::navbar"
+        表示将nav标签下面所有的重复代码替换为waterMainMenu页面的navbar片段
+        -->
+        <nav class="navbar navbar-default" th:replace="waterMainMenu::navbar">
+
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <!--                    class属性值就是bootstrap为我们提供的样式-->
+                    <table class="table table-hover table-striped">
+                        <!--                        表头信息-->
+                        <thead>
+                        <tr>
+                            <td style="background-color: pink">送水工名称</td>
+                            <td style="background-color: pink">客户详细信息</td>
+                            <td style="background-color: pink">送水数量</td>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="details : ${detailsList}">
+                            <td th:text="${details.workerName}"></td>
+                            <td th:text="${details.custDetails}"></td>
+                            <td th:text="${details.sendWaterCount}"></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

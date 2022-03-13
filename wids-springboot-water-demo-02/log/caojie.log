@@ -1,0 +1,388 @@
+2022-02-22 13:13:42  INFO SpringBootTestContextBootstrapper:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.wids.mapper.CustomerMapperTest], using SpringBootContextLoader
+2022-02-22 13:13:42  INFO AbstractContextLoader:264 - Could not detect default resource locations for test class [com.wids.mapper.CustomerMapperTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-02-22 13:13:42  INFO AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [com.wids.mapper.CustomerMapperTest]: CustomerMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-02-22 13:13:42  INFO SpringBootTestContextBootstrapper:237 - Found @SpringBootConfiguration com.wids.SpringBootWaterApplication8097 for test class com.wids.mapper.CustomerMapperTest
+2022-02-22 13:13:42  INFO SpringBootTestContextBootstrapper:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-02-22 13:13:42  INFO SpringBootTestContextBootstrapper:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@53251a66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6853425f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@352c1b98, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@21129f1f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5a9f4771, org.springframework.test.context.transaction.TransactionalTestExecutionListener@282cb7c7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7d898981, org.springframework.test.context.event.EventPublishingTestExecutionListener@48d61b48, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@68d279ec, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@258d79be, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@14f9390f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6c0d7c83, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@176b75f7, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5965be2d]
+2022-02-22 13:13:42  INFO CustomerMapperTest:55 - Starting CustomerMapperTest on LAPTOP-833AHA97 with PID 23424 (started by lenovo in D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02)
+2022-02-22 13:13:42  INFO CustomerMapperTest:651 - No active profile set, falling back to default profiles: default
+2022-02-22 13:13:43 DEBUG ClassPathMapperScanner:441 - Ignored because not a concrete top-level class: file [D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02\target\test-classes\com\wids\mapper\CustomerMapperTest.class]
+2022-02-22 13:13:43 DEBUG ClassPathMapperScanner:435 - Identified candidate component class: file [D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02\target\classes\com\wids\mapper\CustomerMappper.class]
+2022-02-22 13:13:43 DEBUG ClassPathMapperScanner:49 - Creating MapperFactoryBean with name 'customerMappper' and 'com.wids.mapper.CustomerMappper' mapperInterface
+2022-02-22 13:13:43 DEBUG ClassPathMapperScanner:49 - Enabling autowire by type for MapperFactoryBean with name 'customerMappper'.
+2022-02-22 13:13:43  INFO DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2022-02-22 13:13:43  INFO DruidDataSource:983 - {dataSource-1} inited
+2022-02-22 13:13:45  INFO ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-22 13:13:45  INFO EndpointLinksResolver:58 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-22 13:13:45  INFO CustomerMapperTest:61 - Started CustomerMapperTest in 3.379 seconds (JVM running for 4.482)
+2022-02-22 13:13:46  INFO ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-22 13:13:46  INFO DruidDataSource:2024 - {dataSource-1} closing ...
+2022-02-22 13:13:46  INFO DruidDataSource:2096 - {dataSource-1} closed
+2022-02-22 13:15:52  INFO SpringBootTestContextBootstrapper:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.wids.mapper.CustomerMapperTest], using SpringBootContextLoader
+2022-02-22 13:15:52  INFO AbstractContextLoader:264 - Could not detect default resource locations for test class [com.wids.mapper.CustomerMapperTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-02-22 13:15:52  INFO AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [com.wids.mapper.CustomerMapperTest]: CustomerMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-02-22 13:15:52  INFO SpringBootTestContextBootstrapper:237 - Found @SpringBootConfiguration com.wids.SpringBootWaterApplication8097 for test class com.wids.mapper.CustomerMapperTest
+2022-02-22 13:15:52  INFO SpringBootTestContextBootstrapper:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-02-22 13:15:52  INFO SpringBootTestContextBootstrapper:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3b8f0a79, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@71e693fa, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@48793bef, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7d286fb6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3eb77ea8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7b8b43c7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7aaca91a, org.springframework.test.context.event.EventPublishingTestExecutionListener@44c73c26, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@41005828, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@60b4beb4, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7fcf2fc1, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2141a12, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4196c360, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@41294f8]
+2022-02-22 13:15:52  INFO CustomerMapperTest:55 - Starting CustomerMapperTest on LAPTOP-833AHA97 with PID 12584 (started by lenovo in D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02)
+2022-02-22 13:15:52  INFO CustomerMapperTest:651 - No active profile set, falling back to default profiles: default
+2022-02-22 13:15:53 DEBUG ClassPathMapperScanner:441 - Ignored because not a concrete top-level class: file [D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02\target\test-classes\com\wids\mapper\CustomerMapperTest.class]
+2022-02-22 13:15:53 DEBUG ClassPathMapperScanner:435 - Identified candidate component class: file [D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02\target\classes\com\wids\mapper\CustomerMappper.class]
+2022-02-22 13:15:53 DEBUG ClassPathMapperScanner:49 - Creating MapperFactoryBean with name 'customerMappper' and 'com.wids.mapper.CustomerMappper' mapperInterface
+2022-02-22 13:15:53 DEBUG ClassPathMapperScanner:49 - Enabling autowire by type for MapperFactoryBean with name 'customerMappper'.
+2022-02-22 13:15:53  INFO DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2022-02-22 13:15:53  INFO DruidDataSource:983 - {dataSource-1} inited
+2022-02-22 13:15:54  INFO ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-22 13:15:55  INFO EndpointLinksResolver:58 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-22 13:15:55  INFO CustomerMapperTest:61 - Started CustomerMapperTest in 3.283 seconds (JVM running for 4.2)
+2022-02-22 13:15:56  INFO ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-22 13:15:56  INFO DruidDataSource:2024 - {dataSource-1} closing ...
+2022-02-22 13:15:56  INFO DruidDataSource:2096 - {dataSource-1} closed
+2022-02-22 13:17:05  INFO SpringBootTestContextBootstrapper:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.wids.mapper.CustomerMapperTest], using SpringBootContextLoader
+2022-02-22 13:17:05  INFO AbstractContextLoader:264 - Could not detect default resource locations for test class [com.wids.mapper.CustomerMapperTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-02-22 13:17:05  INFO AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [com.wids.mapper.CustomerMapperTest]: CustomerMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-02-22 13:17:05  INFO SpringBootTestContextBootstrapper:237 - Found @SpringBootConfiguration com.wids.SpringBootWaterApplication8097 for test class com.wids.mapper.CustomerMapperTest
+2022-02-22 13:17:05  INFO SpringBootTestContextBootstrapper:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-02-22 13:17:05  INFO SpringBootTestContextBootstrapper:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3b8f0a79, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@71e693fa, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@48793bef, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7d286fb6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3eb77ea8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7b8b43c7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7aaca91a, org.springframework.test.context.event.EventPublishingTestExecutionListener@44c73c26, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@41005828, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@60b4beb4, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7fcf2fc1, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2141a12, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4196c360, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@41294f8]
+2022-02-22 13:17:05  INFO CustomerMapperTest:55 - Starting CustomerMapperTest on LAPTOP-833AHA97 with PID 12668 (started by lenovo in D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02)
+2022-02-22 13:17:05  INFO CustomerMapperTest:651 - No active profile set, falling back to default profiles: default
+2022-02-22 13:17:06 DEBUG ClassPathMapperScanner:441 - Ignored because not a concrete top-level class: file [D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02\target\test-classes\com\wids\mapper\CustomerMapperTest.class]
+2022-02-22 13:17:06 DEBUG ClassPathMapperScanner:435 - Identified candidate component class: file [D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02\target\classes\com\wids\mapper\CustomerMappper.class]
+2022-02-22 13:17:06 DEBUG ClassPathMapperScanner:49 - Creating MapperFactoryBean with name 'customerMappper' and 'com.wids.mapper.CustomerMappper' mapperInterface
+2022-02-22 13:17:06 DEBUG ClassPathMapperScanner:49 - Enabling autowire by type for MapperFactoryBean with name 'customerMappper'.
+2022-02-22 13:17:06  INFO DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2022-02-22 13:17:07  INFO DruidDataSource:983 - {dataSource-1} inited
+2022-02-22 13:17:08  INFO ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-22 13:17:08  INFO EndpointLinksResolver:58 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-22 13:17:08  INFO CustomerMapperTest:61 - Started CustomerMapperTest in 3.408 seconds (JVM running for 4.337)
+2022-02-22 13:17:09  INFO ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-22 13:17:09  INFO DruidDataSource:2024 - {dataSource-1} closing ...
+2022-02-22 13:17:09  INFO DruidDataSource:2096 - {dataSource-1} closed
+2022-02-22 14:41:52  INFO SpringBootTestContextBootstrapper:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.wids.mapper.CustomerMapperTest], using SpringBootContextLoader
+2022-02-22 14:41:52  INFO AbstractContextLoader:264 - Could not detect default resource locations for test class [com.wids.mapper.CustomerMapperTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-02-22 14:41:52  INFO AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [com.wids.mapper.CustomerMapperTest]: CustomerMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-02-22 14:41:52  INFO SpringBootTestContextBootstrapper:237 - Found @SpringBootConfiguration com.wids.SpringBootWaterApplication8097 for test class com.wids.mapper.CustomerMapperTest
+2022-02-22 14:41:52  INFO SpringBootTestContextBootstrapper:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-02-22 14:41:52  INFO SpringBootTestContextBootstrapper:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@48793bef, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7d286fb6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3eb77ea8, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7b8b43c7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7aaca91a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@44c73c26, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@41005828, org.springframework.test.context.event.EventPublishingTestExecutionListener@60b4beb4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7fcf2fc1, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2141a12, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4196c360, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@41294f8, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@225129c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@20435c40]
+2022-02-22 14:41:53  INFO CustomerMapperTest:55 - Starting CustomerMapperTest on LAPTOP-833AHA97 with PID 21224 (started by lenovo in D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02)
+2022-02-22 14:41:53  INFO CustomerMapperTest:651 - No active profile set, falling back to default profiles: default
+2022-02-22 14:41:53 DEBUG ClassPathMapperScanner:441 - Ignored because not a concrete top-level class: file [D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02\target\test-classes\com\wids\mapper\CustomerMapperTest.class]
+2022-02-22 14:41:53 DEBUG ClassPathMapperScanner:435 - Identified candidate component class: file [D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02\target\classes\com\wids\mapper\CustomerMappper.class]
+2022-02-22 14:41:53 DEBUG ClassPathMapperScanner:49 - Creating MapperFactoryBean with name 'customerMappper' and 'com.wids.mapper.CustomerMappper' mapperInterface
+2022-02-22 14:41:53 DEBUG ClassPathMapperScanner:49 - Enabling autowire by type for MapperFactoryBean with name 'customerMappper'.
+2022-02-22 14:41:54  INFO DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2022-02-22 14:41:54  INFO DruidDataSource:983 - {dataSource-1} inited
+2022-02-22 14:41:55  INFO ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-22 14:41:55  INFO EndpointLinksResolver:58 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-22 14:41:55  INFO CustomerMapperTest:61 - Started CustomerMapperTest in 2.98 seconds (JVM running for 3.924)
+2022-02-22 14:41:56 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:41:56 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:41:56  INFO DruidAbstractDataSource:1791 - {dataSource-1} failContinuous is true
+2022-02-22 14:41:56 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:41:57 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:41:57 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:41:58 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:41:58 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:41:59  WARN DruidDataSource:1409 - get connection timeout retry : 1
+2022-02-22 14:41:59 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:41:59 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:00 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:00 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:01 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:01 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:02 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:02 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:03 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:03 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:04 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:04 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:05  WARN DruidDataSource:1409 - get connection timeout retry : 1
+2022-02-22 14:42:05 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:05 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:06 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:06 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:42:07 ERROR DruidDataSource:2776 - create connection SQLException, url: jdbc:mysql://localhost:3306/wids?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1644)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1710)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2774)
+2022-02-22 14:43:14  INFO SpringBootTestContextBootstrapper:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.wids.mapper.CustomerMapperTest], using SpringBootContextLoader
+2022-02-22 14:43:14  INFO AbstractContextLoader:264 - Could not detect default resource locations for test class [com.wids.mapper.CustomerMapperTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-02-22 14:43:14  INFO AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [com.wids.mapper.CustomerMapperTest]: CustomerMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-02-22 14:43:14  INFO SpringBootTestContextBootstrapper:237 - Found @SpringBootConfiguration com.wids.SpringBootWaterApplication8097 for test class com.wids.mapper.CustomerMapperTest
+2022-02-22 14:43:14  INFO SpringBootTestContextBootstrapper:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-02-22 14:43:14  INFO SpringBootTestContextBootstrapper:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@48793bef, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7d286fb6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3eb77ea8, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7b8b43c7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7aaca91a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@44c73c26, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@41005828, org.springframework.test.context.event.EventPublishingTestExecutionListener@60b4beb4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7fcf2fc1, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2141a12, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4196c360, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@41294f8, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@225129c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@20435c40]
+2022-02-22 14:43:14  INFO CustomerMapperTest:55 - Starting CustomerMapperTest on LAPTOP-833AHA97 with PID 16684 (started by lenovo in D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02)
+2022-02-22 14:43:14  INFO CustomerMapperTest:651 - No active profile set, falling back to default profiles: default
+2022-02-22 14:43:15 DEBUG ClassPathMapperScanner:441 - Ignored because not a concrete top-level class: file [D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02\target\test-classes\com\wids\mapper\CustomerMapperTest.class]
+2022-02-22 14:43:15 DEBUG ClassPathMapperScanner:435 - Identified candidate component class: file [D:\IdeaProjects\wids-springboot-water\wids-springboot-water-demo-02\target\classes\com\wids\mapper\CustomerMappper.class]
+2022-02-22 14:43:15 DEBUG ClassPathMapperScanner:49 - Creating MapperFactoryBean with name 'customerMappper' and 'com.wids.mapper.CustomerMappper' mapperInterface
+2022-02-22 14:43:15 DEBUG ClassPathMapperScanner:49 - Enabling autowire by type for MapperFactoryBean with name 'customerMappper'.
+2022-02-22 14:43:15  INFO DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2022-02-22 14:43:15  INFO DruidDataSource:983 - {dataSource-1} inited
+2022-02-22 14:43:16  INFO ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-22 14:43:17  INFO EndpointLinksResolver:58 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-22 14:43:17  INFO CustomerMapperTest:61 - Started CustomerMapperTest in 2.777 seconds (JVM running for 3.476)
+2022-02-22 14:43:17  INFO ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-22 14:43:17  INFO DruidDataSource:2024 - {dataSource-1} closing ...
+2022-02-22 14:43:17  INFO DruidDataSource:2096 - {dataSource-1} closed

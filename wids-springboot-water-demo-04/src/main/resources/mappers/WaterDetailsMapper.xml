@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wids.mapper.WaterDetailsMapper">
+    <select id="listWaterDetails" resultType="WaterDetails">
+        SELECT w.worker_name ,
+        ifnull(GROUP_CONCAT(DISTINCT c.cust_name),'-') cust_details ,
+        ifnull(sum(h.send_water_count),0) send_water_count
+        FROM tb_worker w left join tb_history h on w.wid = h.worker_id left join tb_customer c on h.cust_id = c.cid
+        GROUP BY w.wid
+        ORDER BY send_water_count desc
+    </select>
+</mapper>

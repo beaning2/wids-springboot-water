@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> XXX送水公司后台管理系统</title>
+
+    <!--Bootstrap固定框架-->
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}">
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.css}">
+    <!--图标库-->
+    <link rel='stylesheet' th:href='@{/css/material-design-iconic-font.min.css}'>
+    <!--核心样式-->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+<!--    引入jQuery库-->
+    <script th:src="@{/webjars/jquery/3.3.1/jquery.js}"></script>
+    <script>
+        $(function(){
+           // 1 为"全选/反选"复选框绑定单击事件，一旦触发能够选中表格内容里面所有的复选框
+            $("#allSelect").click(function(){
+                // 使用元素属性选择器，选中表格内容里面所有的复选框，然后进行遍历，操作checked属性将其取反
+                $("input[name=hid]").each(function(){
+                    // $(this)表示当前的某个复选框
+                    // 将每个复选框进行取反操作，如果是选中状态变为没有选中，如果是没有选中状态变为选中
+                    // $(this)表示当前jQuery对象，this表示当前JS对象
+                    $(this).prop("checked", !$(this).prop("checked"));
+                })
+            })
+            // 2 为“批量删除”按钮绑定单机事件，获取复选框选中的id，然后使用ajax向后端发送异步请求执行批量删除操作
+            /**
+             * 批量删除详细步骤：
+             * 1 给出确认提示框，只有当我们选择确认的情况下才执行批量删除，如果选择取消批量删除不会往下执行，将所有复选框都设置为“未选中”状态
+             * 2 定义变量ids，用来存储选中的id值
+             * 3 遍历表格内容里面的每个复选框，判断是否选中，如果选中了就取出id值。拼接到变量ids中
+             * 4 使用ajax向后端发起异步请求，执行批量删除操作
+             * 5 异步请求发送成功的情况下判断后端返回的状态
+             *   5.1 如果后端返回的状态为success，表示批量删除成功，重定向到"送水历史管理"列表，显示批量删除之后的数据
+             *   5.2 如果后端返回的状态为fail，提示“删除失败”
+             * */
+            $("#batchDelete").click(function(){
+                // 条件成立：表示点击的是“取消”操作终止批量删除
+                if (!confirm("确定要删除吗?")){
+                    $("input[type=checkbox]").prop("checked",false);
+                    return false;
+                }
+                // 如果点击的是“确定”操作，进行批量删除。
+                // 定义变量ids，用来存储选中的id值，遍历表格内容里面的每个复选框，判断是否选中，如果选中了就取出id值。拼接到变量ids中
+                var ids = "";
+                $("input[name=hid]").each(function(){
+                    // 判断是否选中,获取复选框的checked值
+                    // console.log($(this).prop("checked"));
+                    // 条件成立：表示复选框是选中状态，获取送水历史id值，将其拼接到ids变量中
+                    if($(this).prop("checked")) {
+                        ids += "," + $(this).val();
+                    }
+                })
+                console.log(ids);
+                // 向后端发起异步请求，执行批量删除操作
+                $.ajax({
+                    url :'http://localhost:8093/history/batchDeleteHistory',
+                    data:{
+                        ids:ids
+                    },
+                    type: 'POST',
+                    // success 表示异步请求之后执行的回调函数
+                    success : function(data,status) {
+                        // data表示后端处理请求完毕返回给前端响应信息，条件成立表示删除成功，调整到“送水历史列表”页面，显示批量删除之后的信息
+                        if (data == "success") {
+                            window.location.href='http://localhost:8093/history/historyList';
+                        } else {
+                            alert("批量删除失败");
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div id="viewport">
+
+    <!-- Sidebar
+    th:replace="waterMainMenu::sidebar"表示将div标签下面重复的代码替换为waterMainMenu页面的sidebar片段
+    -->
+    <div id="sidebar" th:replace="waterMainMenu::sidebar">
+
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+        <!--
+        th:replace="waterMainMenu::navbar"
+        表示将nav标签下面所有的重复代码替换为waterMainMenu页面的navbar片段
+        -->
+        <nav class="navbar navbar-default" th:replace="waterMainMenu::navbar">
+
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <a class="btn btn-primary" th:href="@{/history/preSaveHistory}">添加送水历史</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-danger" id="batchDelete" href="#">批量删除</a>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <!--                    class属性值就是bootstrap为我们提供的样式-->
+                    <table class="table table-hover table-striped">
+                        <!--                        表头信息-->
+                        <thead>
+                        <tr>
+                            <td>
+<!--                                "全选/反选"的复选框-->
+                                <input type="checkbox" id="allSelect" value="allSelect" >全选/反选
+                            </td>
+                            <td>送水历史编号</td>
+                            <td>送水工名称</td>
+                            <td>送水时间</td>
+                            <td>客户名称</td>
+                            <td>送水数量</td>
+                            <td>操作</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--
+                        渲染送水历史列表
+                        -->
+                            <tr th:each="his : ${hisList}">
+                                <td>
+<!--                                    批量删除的复选框-->
+                                    <input type="checkbox" name="hid" th:value="${his.hid}">
+                                </td>
+                                <td th:text="${his.hid}"></td>
+                                <td th:text="${his.worker.workerName}"></td>
+                                <td th:text="${#dates.format(his.sendWaterTime,'yyyy-MM-dd')}"></td>
+                                <td th:text="${his.customer.custName}"></td>
+                                <td th:text="${his.sendWaterCount}"></td>
+                                <td>
+<!--                                    修改按钮-->
+                                    <a class="glyphicon glyphicon-edit" th:href="@{'/history/preUpdateHistory/'+${his.hid}}"></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

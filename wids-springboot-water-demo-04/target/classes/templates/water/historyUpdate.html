@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> XXX送水公司后台管理系统</title>
+
+    <!--Bootstrap固定框架-->
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}">
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.css}">
+    <!--图标库-->
+    <link rel='stylesheet' th:href='@{/css/material-design-iconic-font.min.css}'>
+    <!--核心样式-->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+
+<div id="viewport">
+
+    <!-- Sidebar -->
+    <div id="sidebar" th:replace="waterMainMenu::sidebar">
+
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+        <nav class="navbar navbar-default" th:replace="waterMainMenu::navbar">
+
+        </nav>
+        <!--        bootstrap框架的外层容器-->
+        <div class="container-fluid">
+            <!--            容器使用行的方式从左到右进行流式布局-->
+            <div class="row">
+                <!--                栅格系统把屏幕的宽度分隔为12等分-->
+                <div class="col-md-12">
+                    <!--                    水平排列的表单-->
+                    <form class="form-horizontal" method="post" th:action="@{/history/updateHistory}" >
+<!--                        修改送水历史表单，送水历史ID作为隐藏域， 该值需要传递给后端-->
+                        <input type="hidden" th:value="${history.hid}" name="hid">
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">送水工编号</label>
+                            <div class="col-sm-5">
+                                <select name="workerId" class="form-control">
+                                    <!--
+        th:selected表示下拉列表框的选项是否选中，如果selected里面的值为true就选中，否则就不选中
+-->
+                                    <option th:each="worker : ${workerList}"
+                                            th:selected="${history.worker.workerName eq worker.workerName}"
+                                            th:value="${worker.wid}"
+                                            th:text="${worker.workerName}">
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">客户编号</label>
+                            <div class="col-sm-5">
+                                <select name="custId" class="form-control">
+                                    <!--
+                                    history.customer.custName表示送水历史对应的客户名称
+                                     cust.custName 表示客户列表里面的客户名称
+                                     eq 表示等于   如果两边的值相等，就将该选项选中
+
+-->
+                                    <option th:each="cust : ${custList}"
+                                            th:selected="${history.customer.custName eq cust.custName}"
+                                            th:value="${cust.cid}"
+                                            th:text="${cust.custName}">
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">送水时间</label>
+                            <div class="col-sm-5">
+                                <input type="date"
+                                       class="form-control"
+                                       th:value="${#dates.format(history.sendWaterTime,'yyyy-MM-dd')}"
+                                       name="sendWaterTime"
+                                       placeholder="送水时间">
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label  class="col-sm-2 control-label">送水数量</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="sendWaterCount" th:value="${history.sendWaterCount}"  placeholder="送水数量">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!--                            col-sm-offset-2 col-sm-5 表示提交和取消按钮占据了12个格子的5个，但是会向右偏移两个-->
+                            <div class="col-sm-offset-2 col-sm-5">
+                                <input type="submit" class="btn btn-primary" name="submit"  value="提交">
+                                &nbsp;&nbsp;
+                                <input type="reset" class="btn btn-warning" name="reset"  value="取消">
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

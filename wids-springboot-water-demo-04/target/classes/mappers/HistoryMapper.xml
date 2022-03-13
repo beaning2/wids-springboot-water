@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+表示HistoryMapper.xml映射文件对应HistoryMapper(送水历史管理映射器)
+-->
+<mapper namespace="com.wids.mapper.HistoryMapper">
+<!--    由于是多张变联合查询我们需要将多张表查询的数据封装成一个结果集
+id属性表示resultMap结果集在当前映射文件的唯一性
+type表示映射的实体类
+-->
+    <resultMap id="selectListHistory" type="History">
+        <id column="hid" property="hid"></id>
+        <result column="send_water_time" property="sendWaterTime"></result>
+        <result column="send_water_count" property="sendWaterCount"></result>
+<!--        送水历史关联送水工-->
+        <association property="worker" >
+<!--            送水历史关联送水工的“送水工姓名”列-->
+                <result column="worker_name" property="workerName"></result>
+           </association>
+<!--        送水历史关联客户的“客户名称”列-->
+        <association property="customer">
+                <result column="cust_name" property="custName"></result>
+        </association>
+    </resultMap>
+    <sql id="selectHistory" >
+        SELECT h.hid , w.worker_name , h.send_water_time ,c.cust_name ,h.send_water_count
+        FROM tb_history h , tb_worker w , tb_customer c
+        WHERE h.cust_id = c.cid and h.worker_id = w.wid
+    </sql>
+<!--    编写多表查询的SQL语句，查询历史信息: 送水历史ID、 送水工名称、 送水时间、客户名称、送水数量
+        select节点的resultMap属性值必须跟resultMap节点的id属性值保持一致。需要将select查询结果映射到id为selectListHistory的结果集中
+-->
+    <select id="listHistory" resultMap="selectListHistory">
+        <include refid="selectHistory"></include>
+    </select>
+
+    <insert id="saveHistory" >
+        insert into tb_history(worker_id,cust_id,send_water_time,send_water_count)
+        values(#{worker.wid},#{customer.cid},#{sendWaterTime},#{sendWaterCount})
+    </insert>
+<!--    根据送水历史ID查询对应的送水历史信息
+        查询结果返回一个resultMap对象，该对象是一个结果集，这个结果集对应的名称是selectListHistory
+        parameterType="int" 表示getHistoryById方法的参数类型为Integer
+-->
+    <select id="getHistoryById" resultMap="selectListHistory" parameterType="int">
+        <include refid="selectHistory"></include>
+        and h.hid= #{hid}
+    </select>
+
+<!--    修改送水历史信息-->
+    <update id="updateHistory" parameterType="History">
+        update tb_history
+        set worker_id = #{worker.wid} , cust_id = #{customer.cid} , send_water_time = #{sendWaterTime} , send_water_count = #{sendWaterCount}
+        where hid = #{hid}
+    </update>
+
+
+</mapper>
